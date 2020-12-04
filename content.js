@@ -1,28 +1,25 @@
-var checked_for_ads = false;
+let checked_for_ads = false;
 
-// only run checks if user viewing generic twitter feed (or notifications tab, TBD)
-setInterval(function() {
-  if ($('div.ProfileCanopy').length == 0 && checked_for_ads == false) {
-    var ads = getAds();
-    hideAds(ads)
+setInterval(() => {
+  if (checked_for_ads) {
+    return;
+  }
+
+  const ads = getAds();
+
+  if (ads.length) {
+    ads.forEach(hideAd);
     checked_for_ads = true;
   }
-}, 500)
+}, 500);
 
 function getAds() {
-  return $('.js-action-dismiss');
+  return document.querySelectorAll('div[data-testid=placementTracking]');
 }
 
-function hideAds(ads) {
-  console.log('blocking ' + ads.length + ' ads...')
-  ads.each(function(i){$(this).click()});
+function hideAd(ad) {
+  ad.remove();
 }
 
 // check for fake news again, if user auto loads more ads in feed
-$(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-     var ads = getAds();
-     if (ads.length > 0) {console.log('found ' + ads.length + ' new ads.');}
-     hideAds(ads);
-   }
-});
+document.addEventListener('scroll', () => getAds().forEach(hideAd));
