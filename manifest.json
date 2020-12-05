@@ -6,13 +6,11 @@
   "browser_action": {
      "default_icon": "hide-twitter-ads-128.png"
    },
-  "version": "0.3",
+  "version": "0.4",
   "icons": { "16": "hide-twitter-ads-16.png",
            "48": "hide-twitter-ads-48.png",
           "128": "hide-twitter-ads-128.png" },
   "permissions": [
-    "activeTab",
-    "tabs"
   ],
   "background":{
     "scripts": ["icon.js"],
