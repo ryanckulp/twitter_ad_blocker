@@ -15,7 +15,7 @@
     "tabs"
   ],
   "background":{
-    "scripts": ["jquery.min.js", "icon.js"],
+    "scripts": ["icon.js"],
     "persistent": false
   },
   "content_scripts": [
@@ -24,7 +24,7 @@
         "http://*.twitter.com/*",
         "https://*.twitter.com/*"
         ],
-      "js":["jquery.min.js","content.js"]
+      "js":["content.js"]
     }
   ]
 }
