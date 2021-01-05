@@ -19,9 +19,11 @@ function getAds() {
 }
 
 function hideAd(ad) {
-  ad.remove();
-  adsHidden += 1;
-  console.log('Twitter ads hidden: ', adsHidden.toString());
+  if (ad.innerText !== 'Follow') {
+    ad.remove();
+    adsHidden += 1;
+    console.log('Twitter ads hidden: ', adsHidden.toString());
+  }
 }
 
 // check for fake news again, if user auto loads more ads in feed
