@@ -1,7 +1,14 @@
 var adsHidden = 0;
 
+const PROMOTED_LABELS = [
+  'Promoted', // English
+  'プロモーション', // Japanese
+  '프로모션 중' // Korean
+  // TODO: Add other languages
+]
+
 function getAds() {
-  return Array.from(document.querySelectorAll('span')).filter(el => el.textContent === 'Promoted');
+  return Array.from(document.querySelectorAll('span')).filter(el => PROMOTED_LABELS.includes(el.textContent));
 }
 
 function hideAd(ad) {
