@@ -3,7 +3,8 @@ var adsHidden = 0;
 const PROMOTED_LABELS = [
   'Promoted', // English
   'プロモーション', // Japanese
-  '프로모션 중' // Korean
+  '프로모션 중', // Korean
+  'Promowane' // Polish
   // TODO: Add other languages
 ]
 
