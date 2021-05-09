@@ -1,4 +1,5 @@
 var adsHidden = 0;
+var adSelector = "div[data-testid=placementTracking]";
 
 const PROMOTED_LABELS = [
   'Promoted', // English
@@ -14,8 +15,8 @@ function getAds() {
 }
 
 function hideAd(ad) {
-  if (ad.closest("div[data-testid=placementTracking]") !== null) { // ignores 'Promoted' follow recos
-    ad.closest("div[data-testid=placementTracking]").remove();
+  if (ad.closest(adSelector) !== null) { // ignores 'Promoted' follow recos
+    ad.closest(adSelector).remove();
     adsHidden += 1;
     console.log('Twitter ads hidden: ', adsHidden.toString());
   } else {
@@ -23,6 +24,7 @@ function hideAd(ad) {
   }
 }
 
+// hide ads on page load
 document.addEventListener('load', () => getAds().forEach(hideAd));
 
 // re-check as user scrolls
