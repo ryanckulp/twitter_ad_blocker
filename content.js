@@ -23,5 +23,7 @@ function hideAd(ad) {
   }
 }
 
+document.addEventListener('load', () => getAds().forEach(hideAd));
+
 // re-check as user scrolls
 document.addEventListener('scroll', () => getAds().forEach(hideAd));
