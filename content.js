@@ -8,8 +8,8 @@ const PROMOTED_LABELS = [
   'Promowane', // Polish
   'Sponsrad', // Swedish
   'Реклама', // Ukrainian
-  'Sponzorováno' // Czech
-  'Gesponsert' // German
+  'Sponzorováno', // Czech
+  'Gesponsert', // German
   'Promocionado' // Spanish
   // TODO: Add other languages
 ]
