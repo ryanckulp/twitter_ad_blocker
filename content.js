@@ -31,5 +31,10 @@ function hideAd(ad) {
 // hide ads on page load
 document.addEventListener('load', () => getAds().forEach(hideAd));
 
+// oftentimes, tweets render after onload. LCP should catch them.
+new PerformanceObserver((entryList) => {
+  getAds().forEach(hideAd);
+}).observe({type: 'largest-contentful-paint', buffered: true});
+
 // re-check as user scrolls
 document.addEventListener('scroll', () => getAds().forEach(hideAd));
