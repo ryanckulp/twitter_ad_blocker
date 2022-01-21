@@ -7,7 +7,8 @@ const PROMOTED_LABELS = [
   '프로모션 중', // Korean
   'Promowane', // Polish
   'Sponsrad', // Swedish
-  'Реклама' // Ukrainian
+  'Реклама', // Ukrainian
+  'Sponzorováno' // Czech
   // TODO: Add other languages
 ]
 
