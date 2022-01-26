@@ -15,7 +15,16 @@ const PROMOTED_LABELS = [
 ]
 
 function getAds() {
-  return Array.from(document.querySelectorAll('span')).filter(el => PROMOTED_LABELS.includes(el.textContent));
+  return Array.from(document.querySelectorAll('span')).filter(function(el) {
+    var filteredAd;
+    PROMOTED_LABELS.forEach(function(label) {
+      if (el.textContent.includes(label)) {
+        filteredAd = el;
+      }
+    })
+
+    return filteredAd;
+  })
 }
 
 function hideAd(ad) {
