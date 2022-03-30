@@ -11,7 +11,8 @@ const PROMOTED_LABELS = [
   'Sponzorováno', // Czech
   'Gesponsert', // German
   'Promocionado', // Spanish
-  'Sponsorisé' // French
+  'Sponsorisé', // French
+  'Sponsorizzato' // Italiano
   // TODO: Add other languages
 ]
 
