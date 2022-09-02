@@ -14,6 +14,8 @@ function getAds() {
       filteredAd = el;
     } else if (el.getInnerHTML().includes(youMightLikeSvgPath)) {
       filteredAd = el;
+    } else if (el.innerText == 'Promoted Tweet') { // TODO: bring back multi-lingual support from git history
+      filteredAd = el;
     }
 
     return filteredAd;
@@ -33,7 +35,11 @@ function hideAd(ad) {
   } else if (ad.closest(articleSelector) !== null) {
     ad.closest(articleSelector).remove();
     adsHidden += 1;
+  } else if (ad.innerText == 'Promoted Tweet') {
+    ad.remove();
+    adsHidden += 1;
   }
+
   console.log('Twitter ads hidden: ', adsHidden.toString());
 }
 
