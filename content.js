@@ -1,4 +1,4 @@
-var adsHidden = 0;
+ar adsHidden = 0;
 var adSelector = "div[data-testid=placementTracking]";
 var trendSelector = "div[data-testid=trend]";
 var userSelector = "div[data-testid=UserCell]";
@@ -17,6 +17,7 @@ function getAds() {
     } else if (el.innerText == 'Promoted Tweet') { // TODO: bring back multi-lingual support from git history
       filteredAd = el;
     }
+
     return filteredAd;
   }).concat(Array.from(document.querySelectorAll('span')).filter(s=>s.getInnerHTML().includes('Promoted')))
 }
@@ -52,4 +53,3 @@ new PerformanceObserver((entryList) => {
 
 // re-check as user scrolls
 document.addEventListener('scroll', () => getAds().forEach(hideAd));
-
