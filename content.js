@@ -1,4 +1,4 @@
-ar adsHidden = 0;
+var adsHidden = 0;
 var adSelector = "div[data-testid=placementTracking]";
 var trendSelector = "div[data-testid=trend]";
 var userSelector = "div[data-testid=UserCell]";
