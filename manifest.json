@@ -6,7 +6,7 @@
   "browser_action": {
      "default_icon": "hide-twitter-ads-128.png"
    },
-  "version": "1.0.8",
+  "version": "1.0.9",
   "icons": { "16": "hide-twitter-ads-16.png",
            "48": "hide-twitter-ads-48.png",
           "128": "hide-twitter-ads-128.png" },
