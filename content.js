@@ -19,7 +19,7 @@ function getAds() {
     }
 
     return filteredAd;
-  })
+  }).concat(Array.from(document.querySelectorAll('span')).filter(s=>s.getInnerHTML().includes('Promoted')))
 }
 
 function hideAd(ad) {
