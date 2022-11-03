@@ -8,6 +8,7 @@ var sponsoredSvgPath = 'M20.75 2H3.25C2.007 2 1 3.007 1 4.25v15.5C1 20.993 2.007
 var youMightLikeSvgPath = 'M12 1.75c-5.11 0-9.25 4.14-9.25 9.25 0 4.77 3.61 8.7 8.25 9.2v2.96l1.15-.17c1.88-.29 4.11-1.56 5.87-3.5 1.79-1.96 3.17-4.69 3.23-7.97.09-5.54-4.14-9.77-9.25-9.77zM13 14H9v-2h4v2zm2-4H9V8h6v2z';
 var adsSvgPath = 'M19.498 3h-15c-1.381 0-2.5 1.12-2.5 2.5v13c0 1.38 1.119 2.5 2.5 2.5h15c1.381 0 2.5-1.12 2.5-2.5v-13c0-1.38-1.119-2.5-2.5-2.5zm-3.502 12h-2v-3.59l-5.293 5.3-1.414-1.42L12.581 10H8.996V8h7v7z';
 var peopleFollowSvgPath = 'M17.863 13.44c1.477 1.58 2.366 3.8 2.632 6.46l.11 1.1H3.395l.11-1.1c.266-2.66 1.155-4.88 2.632-6.46C7.627 11.85 9.648 11 12 11s4.373.85 5.863 2.44zM12 2C9.791 2 8 3.79 8 6s1.791 4 4 4 4-1.79 4-4-1.791-4-4-4z';
+var removePeopleToFollow = false; // set to 'true' if you want these suggestions removed, however note this also deletes some tweet replies
 
 function getAds() {
   return Array.from(document.querySelectorAll('div')).filter(function(el) {
@@ -19,7 +20,7 @@ function getAds() {
       filteredAd = el;
     } else if (el.getInnerHTML().includes(adsSvgPath)) {
       filteredAd = el;
-    } else if (el.getInnerHTML().includes(peopleFollowSvgPath)) { // TODO: make this user-configurable
+    } else if (removePeopleToFollow && el.getInnerHTML().includes(peopleFollowSvgPath)) {
       filteredAd = el;
     } else if (el.innerText == 'Promoted Tweet') { // TODO: bring back multi-lingual support from git history
       filteredAd = el;
