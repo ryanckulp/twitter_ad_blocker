@@ -51,13 +51,27 @@ function hideAd(ad) {
   console.log('Twitter ads hidden: ', adsHidden.toString());
 }
 
+function getAndHideAds() {
+  getAds().forEach(hideAd)
+}
+
 // hide ads on page load
-document.addEventListener('load', () => getAds().forEach(hideAd));
+document.addEventListener('load', () => getAndHideAds());
 
 // oftentimes, tweets render after onload. LCP should catch them.
 new PerformanceObserver((entryList) => {
-  getAds().forEach(hideAd);
+  getAndHideAds();
 }).observe({type: 'largest-contentful-paint', buffered: true});
 
 // re-check as user scrolls
-document.addEventListener('scroll', () => getAds().forEach(hideAd));
+document.addEventListener('scroll', () => getAndHideAds());
+
+// re-check as user scrolls tweet sidebar (exists when image is opened)
+var sidebarExists = setInterval(function() {
+  let timelines = document.querySelectorAll("[aria-label='Timeline: Conversation']");
+
+  if (timelines.length == 2) {
+    let tweetSidebar = document.querySelectorAll("[aria-label='Timeline: Conversation']")[0].parentElement.parentElement;
+    tweetSidebar.addEventListener('scroll', () => getAndHideAds());
+  }
+}, 500);
