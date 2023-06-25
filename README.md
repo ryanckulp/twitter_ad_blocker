@@ -9,4 +9,4 @@ Blocks promoted Tweets, promoted Topics (What's happening), suggested Articles (
 **Supported Browsers**
 
 - [Chrome](https://chrome.google.com/webstore/detail/hide-twitter-ads-block-pr/bapmhjebfdbdpjjfafnkfidijkjlkakf?hl=en)
-- [Microsoft edge](https://github.com/ryanckulp/twitter_ad_blocker/issues/34)
+- [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/hide-twitter-ads-block-/cmnfoolkmkhjkjppnnijolhblhkefmck)
