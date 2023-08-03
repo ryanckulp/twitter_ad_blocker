@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "Hide Twitter Ads - Block Promoted Tweets",
+  "name": "Hide Twitter (X.com) Ads - Block Promoted Tweets",
   "short_name": "Hide Twitter Ads",
-  "description": "Free tool that hides Promoted Tweets while you browse Twitter.",
+  "description": "Free tool that hides Promoted Tweets while you browse Twitter (X.com).",
   "browser_action": {
      "default_icon": "hide-twitter-ads-128.png"
    },
-  "version": "1.1.4",
+  "version": "1.1.5",
   "icons": { "16": "hide-twitter-ads-16.png",
            "48": "hide-twitter-ads-48.png",
           "128": "hide-twitter-ads-128.png" },
