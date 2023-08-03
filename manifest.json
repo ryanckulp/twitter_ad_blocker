@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Hide Twitter (X.com) Ads - Block Promoted Tweets",
+  "name": "Hide Twitter / X.com Ads",
   "short_name": "Hide Twitter Ads",
   "description": "Free tool that hides Promoted Tweets while you browse Twitter (X.com).",
   "browser_action": {
