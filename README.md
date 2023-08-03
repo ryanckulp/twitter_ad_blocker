@@ -1,6 +1,6 @@
-## Twitter Ad Blocker
+## Twitter / X.com Ad Blocker
 
-Free tool (browser extension) that hides promoted Tweets while you browse Twitter.
+Free tool (browser extension) that hides promoted Tweets while you browse Twitter / X.com.
 
 No signup and it doesn't track anything you do.
 
