@@ -11,6 +11,7 @@ var adsSvgPath = 'M19.498 3h-15c-1.381 0-2.5 1.12-2.5 2.5v13c0 1.38 1.119 2.5 2.
 var peopleFollowSvgPath = 'M17.863 13.44c1.477 1.58 2.366 3.8 2.632 6.46l.11 1.1H3.395l.11-1.1c.266-2.66 1.155-4.88 2.632-6.46C7.627 11.85 9.648 11 12 11s4.373.85 5.863 2.44zM12 2C9.791 2 8 3.79 8 6s1.791 4 4 4 4-1.79 4-4-1.791-4-4-4z';
 var xAd = '>Ad<'; // TODO: add more languages; appears to only be used for English accounts as of 2023-08-03
 var removePeopleToFollow = false; // set to 'true' if you want these suggestions removed, however note this also deletes some tweet replies
+const promotedTweetTextSet = new Set(['Promoted Tweet', 'プロモツイート']);
 
 function getAds() {
   return Array.from(document.querySelectorAll('div')).filter(function(el) {
@@ -28,7 +29,7 @@ function getAds() {
       filteredAd = el;
     } else if (el.getInnerHTML().includes(xAd)) {
       filteredAd = el;
-    } else if (el.innerText == 'Promoted Tweet') { // TODO: bring back multi-lingual support from git history
+    } else if (promotedTweetTextSet.has(el.innerText)) { // TODO: bring back multi-lingual support from git history
       filteredAd = el;
     }
 
@@ -49,7 +50,7 @@ function hideAd(ad) {
   } else if (ad.closest(articleSelector) !== null) {
     ad.closest(articleSelector).remove();
     adsHidden += 1;
-  } else if (ad.innerText == 'Promoted Tweet') {
+  } else if (promotedTweetTextSet.has(ad.innerText)) {
     ad.remove();
     adsHidden += 1;
   }
