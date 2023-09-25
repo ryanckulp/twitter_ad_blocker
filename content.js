@@ -17,17 +17,17 @@ function getAds() {
   return Array.from(document.querySelectorAll('div')).filter(function(el) {
     var filteredAd;
 
-    if (el.getInnerHTML().includes(sponsoredSvgPath)) {
+    if (el.innerHTML.includes(sponsoredSvgPath)) {
       filteredAd = el;
-    } else if (el.getInnerHTML().includes(sponsoredBySvgPath)) {
+    } else if (el.innerHTML.includes(sponsoredBySvgPath)) {
       filteredAd = el;
-    } else if (el.getInnerHTML().includes(youMightLikeSvgPath)) {
+    } else if (el.innerHTML.includes(youMightLikeSvgPath)) {
       filteredAd = el;
-    } else if (el.getInnerHTML().includes(adsSvgPath)) {
+    } else if (el.innerHTML.includes(adsSvgPath)) {
       filteredAd = el;
-    } else if (removePeopleToFollow && el.getInnerHTML().includes(peopleFollowSvgPath)) {
+    } else if (removePeopleToFollow && el.innerHTML.includes(peopleFollowSvgPath)) {
       filteredAd = el;
-    } else if (el.getInnerHTML().includes(xAd)) {
+    } else if (el.innerHTML.includes(xAd)) {
       filteredAd = el;
     } else if (promotedTweetTextSet.has(el.innerText)) { // TODO: bring back multi-lingual support from git history
       filteredAd = el;
